@@ -45,7 +45,7 @@
         if (curl_errno($ch)) {
             echo 'Error:' . curl_error($ch);
         }else{
-            echo 'Ok';
+            
         }
         curl_close($ch);
     };
@@ -100,8 +100,8 @@
     if($curr_status == 'Chờ duyệt'){
         switch ($action) {
             case 'Duyệt đơn':
-                $cancel_bill = "UPDATE bill_fashionshop SET bill_status = 'Đang giao', employee = '$employee' WHERE bill_id = '$bill_id'";
-                mysqli_query($connect,$cancel_bill);
+                $confirm_bill = "UPDATE bill_fashionshop SET bill_status = 'Đang giao', employee = '$employee' WHERE bill_id = '$bill_id'";
+                mysqli_query($connect,$confirm_bill);
                 //check remain product
                 $get_bill_quantity = "SELECT * FROM detail_bill_fashionshop INNER JOIN product_size_fashionshop ON detail_bill_fashionshop.product_size_id = product_size_fashionshop.product_size_id INNER JOIN products_fashionshop ON detail_bill_fashionshop.product_id = products_fashionshop.product_id WHERE detail_bill_fashionshop.bill_id = '$bill_id'";
                 $product_sold_out = '';

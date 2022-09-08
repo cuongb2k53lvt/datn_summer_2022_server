@@ -3,7 +3,7 @@
     session_start();
     if(!isset($_SESSION['user_name']) && !isset($_SESSION['password'])){
         echo '<script type="text/JavaScript"> 
-        window.open("http://localhost/FashionShop-phpServer/Web/Login_web.html","_self");
+        window.open("http://datn4.000webhostapp.com/Web/Login_web.html","_self");
       </script>';
     }
     $img = array();
@@ -131,7 +131,7 @@
                               </a>
                               <ul>
                                 <li>
-                                  <a href="http://localhost/FashionShop-phpServer/Web/list_user.php?status=all&search_value=">
+                                  <a href="http://datn4.000webhostapp.com/Web/list_user.php?status=all&search_value=">
                                     <i class="metismenu-icon"></i>
                                     Danh sách người dùng
                                   </a>
@@ -154,7 +154,7 @@
                                   </a>
                                 </li>
                                 <li>
-                                  <a href="http://localhost/FashionShop-phpServer/Web/list_product.php?product_value=all&product_type=all&search_value=">
+                                  <a href="http://datn4.000webhostapp.com/Web/list_product.php?product_value=all&product_type=all&search_value=">
                                     <i class="metismenu-icon"></i>
                                     Danh sách sản phẩm
                                   </a>
@@ -162,7 +162,7 @@
                               </ul>
                             </li>
                             <li>
-                              <a href="http://localhost/FashionShop-phpServer/Web/invoice.php?month_value=all">
+                              <a href="http://datn4.000webhostapp.com/Web/invoice.php?month_value=all">
                                 <i class="metismenu-icon pe-7s-note2"></i>
                                 Hóa đơn chi tiết
                                 <i
@@ -226,7 +226,7 @@
                                     Tên sản phẩm
                                   </p>
                                   <input
-                                    class="w-[76%] focus:outline-none px-2 py-1"
+                                    class="w-[76%] px-2 py-1"
                                     type="text"
                                     id="product_name_edt"
                                     name = "product_name"
@@ -236,23 +236,24 @@
             
                                 <div class="flex justify-between items-center mb-4">
                                   <p class="w-[20%] font-semibold">Mô tả</p>
-                                  <textarea name="desc" cols="40" rows="5" class="w-[76%] focus:outline-none px-2 py-1">'.$desc.'</textarea>
+                                  <textarea name="desc" cols="40" rows="5" class="w-[76%] px-2 py-1">'.$desc.'</textarea>
                                 </div>
             
                                 <div class="flex justify-between items-center mb-4">
-                                  <p class="w-[20%] font-semibold">Giá bán</p>
+                                  <p class="w-[20%] font-semibold">Giá bán(VNĐ)</p>
                                   <input
-                                    class="w-[76%] focus:outline-none px-2 py-1"
+                                    class="w-[76%] px-2 py-1"
                                     type="text"
-                                    disabled
-                                    value="'.number_format($price).' VNĐ"
+                                    id="price_edt"
+                                    name="price"
+                                    value="'.intval($price).'"
                                   />
                                 </div>
             
                                 <div class="flex justify-between items-center mb-4">
                                   <p class="w-[20%] font-semibold">Giá nhập</p>
                                   <input
-                                    class="w-[76%] focus:outline-none px-2 py-1"
+                                    class="w-[76%] px-2 py-1"
                                     type="text"
                                     disabled
                                     value="'.number_format($cost).' VNĐ"
@@ -262,7 +263,7 @@
                                 <div class="flex justify-between items-center mb-4">
                                   <p class="w-[20%] font-semibold">Loại</p>
                                   <input
-                                    class="w-[76%] focus:outline-none px-2 py-1"
+                                    class="w-[76%] px-2 py-1"
                                     type="text"
                                     disabled
                                     value="'.$type.'"
@@ -272,7 +273,7 @@
                                 <div class="flex justify-between items-center mb-4">
                                   <p class="w-[20%] font-semibold">Ngày thêm vào</p>
                                   <input
-                                    class="w-[76%] focus:outline-none px-2 py-1"
+                                    class="w-[76%] px-2 py-1"
                                     type="text"
                                     disabled
                                     value="'.$date_added.'"
@@ -281,7 +282,7 @@
                                 <div class="flex justify-between items-center mb-4">
                                   <p class="w-[20%] font-semibold">Điểm số</p>
                                   <input
-                                    class="w-[76%] focus:outline-none px-2 py-1"
+                                    class="w-[76%] px-2 py-1"
                                     type="text"
                                     disabled
                                     value="'.$rating.'"
@@ -290,7 +291,7 @@
                                 <div class="flex justify-between items-center mb-4">
                                   <p class="w-[20%] font-semibold">Chất liệu</p>
                                   <input
-                                    class="w-[76%] focus:outline-none px-2 py-1"
+                                    class="w-[76%] px-2 py-1"
                                     type="text"
                                     name="material"
                                     value="'.$material.'"
@@ -299,7 +300,7 @@
                                 <div class="flex justify-between items-center mb-4">
                                   <p class="w-[20%] font-semibold">Tỉ lệ giảm giá(%)</p>
                                   <input
-                                    class="w-[76%] focus:outline-none px-2 py-1"
+                                    class="w-[76%] px-2 py-1"
                                     type="text"
                                     name="discount_rate"
                                     value="'.$discount_rate.'"
@@ -308,7 +309,7 @@
                                 <div class="flex justify-between items-center mb-4">
                                   <p class="w-[20%] font-semibold">Số sản phẩm bán được</p>
                                   <input
-                                    class="w-[76%] focus:outline-none px-2 py-1"
+                                    class="w-[76%] px-2 py-1"
                                     type="text"
                                     value="'.$sold_quantity.'"
                                     disabled
@@ -324,7 +325,7 @@
                                 <div class="flex justify-between items-center mb-4">  
                                 <p class="w-[20%] font-semibold">Trạng thái</p>  
                                 <select
-                                  class="bg-white px-3 py-2 text-gray-800 focus:outline-none rounded-2 drop-shadow-md"
+                                  class="bg-white px-3 py-2 text-gray-800 rounded-2 drop-shadow-md"
                                   name="status"
                                   >
                                     <option value="Còn hàng" '.$status1.'>Còn hàng</option>
@@ -353,7 +354,7 @@
                                     />
                                     <input
                                       
-                                      class="w-[76%] focus:outline-none px-2 py-1"
+                                      class="w-[76%] px-2 py-1"
                                       type="number"
                                       id="product_name_edt"
                                       name = "quantity"
@@ -362,7 +363,7 @@
                                       required
                                     />
                                     <select
-                                      class="bg-white px-3 py-2 text-gray-800 focus:outline-none rounded-2 drop-shadow-md"
+                                      class="bg-white px-3 py-2 text-gray-800 rounded-2 drop-shadow-md"
                                       name="size"
                                     >
                                       <option value="S" >Size S</option>

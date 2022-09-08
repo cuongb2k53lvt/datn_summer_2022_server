@@ -8,6 +8,6 @@
     }
     mysqli_query($connect,$update_status);
     echo '<script type="text/JavaScript"> 
-        window.open("http://localhost/FashionShop-phpServer/Web/list_user.php","_self");
+        history.back();
         </script>';
 ?>

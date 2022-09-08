@@ -76,7 +76,7 @@
                                     </a>
                                     <ul>
                                         <li>
-                                            <a href="http://localhost/FashionShop-phpServer/Web/list_user.php?status=all&search_value=">
+                                            <a href="http://datn4.000webhostapp.com/Web/list_user.php?status=all&search_value=">
                                                 <i class="metismenu-icon"></i>
                                                 Danh sách người dùng
                                             </a>
@@ -97,7 +97,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="http://localhost/FashionShop-phpServer/Web/list_product.php?product_value=all&product_type=all&search_value=">
+                                            <a href="http://datn4.000webhostapp.com/Web/list_product.php?product_value=all&product_type=all&search_value=">
                                                 <i class="metismenu-icon"></i>
                                                 Danh sách sản phẩm
                                             </a>
@@ -105,7 +105,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="http://localhost/FashionShop-phpServer/Web/invoice.php?month_value=all">
+                                    <a href="http://datn4.000webhostapp.com/Web/invoice.php?month_value=all">
                                         <i class="metismenu-icon pe-7s-note2"></i>
                                         Hóa đơn chi tiết
                                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
@@ -136,15 +136,15 @@
                                         </p>
                                         <input
                                             class="w-full text-[#333333] text-base border-[1px] border-[#333333] rounded-md px-3 py-2"
-                                            type="text" name="inputAddBrandName" placeholder="Tên brand">
+                                            type="text" name="inputAddBrandName" placeholder="Tên brand" required>
                                         <input
                                             class="w-full text-[#333333] text-base border-[1px] border-[#333333] rounded-md px-3 py-2"
-                                            type="text" name="inputAddBrandLocation" placeholder="Quốc gia">
+                                            type="text" name="inputAddBrandLocation" placeholder="Quốc gia" required>
                                         <input
                                             class="w-full text-[#333333] text-base border-[1px] border-[#333333] rounded-md px-3 py-2"
-                                            type="text" name="inputAddBrandDesc" placeholder="Mô tả">
+                                            type="text" name="inputAddBrandDesc" placeholder="Mô tả" required>
                                         <div class="flex">
-                                            <input type="file" name="fileImgBrand" id="fileImgBrand">
+                                            <input type="file" name="fileImgBrand" id="fileImgBrand" required>
                                             <img src="" alt="" id="imageBrand" width="200" height="200">
                                         </div>
                                         <input
@@ -165,7 +165,7 @@
                                         <p>Loại quần áo</p>
                                         <input
                                             class="w-full text-[#333333] text-base border-[1px] border-[#333333] rounded-md px-3 py-2"
-                                            type="text" name="inputAddType">
+                                            type="text" name="inputAddType" required>
                                         <input
                                             class="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-10 py-4 rounded-md drop-shadow-md transition-all duration-700 hover:-translate-y-1 hover:bg-gradient-to-l"
                                             type="submit" value="Thêm loại quần áo" name="submitAddType">
@@ -183,37 +183,37 @@
                                             <p class="text-[#4285F4] text-[12px] ml-2">Tên sản phẩm</p>
                                             <input
                                                 class="w-full text-[#333333] text-base border-[1px] border-[#333333] rounded-md px-3 py-2"
-                                                type="text" name="productName">
+                                                type="text" name="productName" required>
                                         </div>
                                         <div>
                                             <p class="text-[#4285F4] text-[12px] ml-2">Chất liệu</p>
                                             <input
                                                 class="w-full text-[#333333] text-base border-[1px] border-[#333333] rounded-md px-3 py-2"
-                                                type="text" name="material">
+                                                type="text" name="material" required>
                                         </div>
                                         <div>
                                             <p class="text-[#4285F4] text-[12px] ml-2">Xuất sứ</p>
                                             <input
                                                 class="w-full text-[#333333] text-base border-[1px] border-[#333333] rounded-md px-3 py-2"
-                                                type="text" name="location">
+                                                type="text" name="location" required>
                                         </div>
                                         <div>
                                             <p class="text-[#4285F4] text-[12px] ml-2">Mô tả</p>
                                             <input
                                                 class="w-full text-[#333333] text-base border-[1px] border-[#333333] rounded-md px-3 py-2"
-                                                type="text" name="description">
+                                                type="text" name="description" required>
                                         </div>
                                         <div>
                                             <p class="text-[#4285F4] text-[12px] ml-2">Giá bán</p>
                                             <input
                                                 class="w-full text-[#333333] text-base border-[1px] border-[#333333] rounded-md px-3 py-2"
-                                                type="number" min="1000" name="price">
+                                                type="number" min="1000" name="price" required>
                                         </div>
                                         <div>
                                             <p class="text-[#4285F4] text-[12px] ml-2">Giá nhập</p>
                                             <input
                                                 class="w-full text-[#333333] text-base border-[1px] border-[#333333] rounded-md px-3 py-2"
-                                                type="number" min="1000" name="cost">
+                                                type="number" min="1000" name="cost" required>
                                         </div>
                                         <div>
                                             <p class="text-[#4285F4] text-[12px] ml-2">Brand</p>
@@ -235,7 +235,7 @@
                                             <p class="text-[#4285F4] text-[12px] ml-2">Tỉ lệ giảm giá (%)</p>
                                             <input
                                                 class="w-full text-[#333333] text-base border-[1px] border-[#333333] rounded-md px-3 py-2"
-                                                type="number" min="0" max="100" name="discount">
+                                                type="number" min="0" max="100" name="discount" required>
                                         </div>
                                     </div>
                                     <div class="w-[20%] pt-[18px]">
@@ -246,7 +246,7 @@
                                             <input
                                                 class="w-40 text-[#333333] text-base border-[1px] border-[#333333] rounded-md px-3 py-2"
                                                 type="number" min="0" max="1000" id="size_s" name="size_s"
-                                                placeholder="Số lượng">
+                                                placeholder="Số lượng" required>
                                         </div>
                                         <div class="flex items-center mb-[34px]">
                                             <div class="w-10 mr-4">
@@ -255,7 +255,7 @@
                                             <input
                                                 class="w-40 text-[#333333] text-base border-[1px] border-[#333333] rounded-md px-3 py-2"
                                                 type="number" min="0" max="1000" id="size_m" name="size_m"
-                                                placeholder="Số lượng">
+                                                placeholder="Số lượng" required>
                                         </div>
                                         <div class="flex items-center mb-[34px]">
                                             <div class="w-10 mr-4">
@@ -264,7 +264,7 @@
                                             <input
                                                 class="w-40 text-[#333333] text-base border-[1px] border-[#333333] rounded-md px-3 py-2"
                                                 type="number" min="0" max="1000" id="size_l" name="size_l"
-                                                placeholder="Số lượng">
+                                                placeholder="Số lượng" required>
                                         </div>
                                         <div class="flex items-center">
                                             <div class="w-10 mr-4">
@@ -273,7 +273,7 @@
                                             <input
                                                 class="w-40 text-[#333333] text-base border-[1px] border-[#333333] rounded-md px-3 py-2"
                                                 type="number" min="0" max="1000" id="size_xl" name="size_xl"
-                                                placeholder="Số lượng">
+                                                placeholder="Số lượng" required>
                                         </div>
     
                                     </div>
@@ -286,18 +286,18 @@
                                     <!-- image-1 -->
                                     <div class="flex justify-between mb-6">
                                         <div class="flex">
-                                            <input type="file" name="fileToUpload1" id="fileToUpload1">
+                                            <input type="file" name="fileToUpload1" id="fileToUpload1" required>
                                             <img src="" alt="image-1" id="image1" width="200" height="200">
                                         </div>
                                         <!-- image-2 -->
                                         <div class="flex">
-                                            <input type="file" name="fileToUpload2" id="fileToUpload2">
+                                            <input type="file" name="fileToUpload2" id="fileToUpload2" required>
                                             <img src="" alt="image-2" id="image2" width="200" height="200">
                                         </div>
                                     </div>
                                     <!-- image-3 -->
                                     <div class="flex justify-center">
-                                        <input type="file" name="fileToUpload3" id="fileToUpload3">
+                                        <input type="file" name="fileToUpload3" id="fileToUpload3" required>
                                         <img src="" alt="image-3" id="image3" width="200" height="200">
                                     </div>
                                 </div>

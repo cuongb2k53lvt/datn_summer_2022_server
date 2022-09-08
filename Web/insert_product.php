@@ -1,7 +1,7 @@
 <?php
     require "../dbconnect.php";
     $target_dir = "../product_image/";
-    $base_link = "http://localhost/FashionShop-phpServer/product_image/";
+    $base_link = "http://datn4.000webhostapp.com/product_image/";
     $cur_date = date("Y-m-d");
     $product_id = '';
     $product_name = $_POST["productName"];
@@ -46,7 +46,7 @@
           } else {
             echo '<script type="text/JavaScript"> 
                     alert("File is not an image '.$brand.$type.'");
-                    window.open("http://localhost/FashionShop-phpServer/Web/product_info_page.php","_self");
+                    window.open("http://datn4.000webhostapp.com/Web/product_info_page.php","_self");
                   </script>';
             $uploadOk = 0;
           }
@@ -72,7 +72,7 @@
     if ($uploadOk == 0 || $insertProductOk == 0) {
         echo '<script type="text/JavaScript"> 
                     alert("Sorry, your file was not uploaded '.$insertProductOk.mysqli_error($connect).'");
-                    window.open("http://localhost/FashionShop-phpServer/Web/product_info_page.php","_self");
+                    window.open("http://datn4.000webhostapp.com/Web/product_info_page.php","_self");
                   </script>';
     // if everything is ok, try to upload file
     } else {
@@ -89,7 +89,7 @@
             InsertPhotoProduct($basename3,$product_id,$connect,$base_link);
             echo '<script type="text/JavaScript"> 
                     alert("The product has been uploaded.");
-                    window.open("http://localhost/FashionShop-phpServer/Web/product_info_page.php","_self");
+                    window.open("http://datn4.000webhostapp.com/Web/product_info_page.php","_self");
                   </script>';
         } else {
             unlink("../product_image/".$basename1);
@@ -101,7 +101,7 @@
             mysqli_query($connect,$delete_product);
             echo '<script type="text/JavaScript"> 
                     alert("Sorry, there was an error '.$product_id.mysqli_error($connect).'");
-                    window.open("http://localhost/FashionShop-phpServer/Web/product_info_page.php","_self");
+                    window.open("http://datn4.000webhostapp.com/Web/product_info_page.php","_self");
                   </script>';
         }
     }
@@ -130,7 +130,7 @@
         if (file_exists($target_file)) {
             echo '<script type="text/JavaScript"> 
                     alert("Sorry, file already exists.");
-                    window.open("http://localhost/FashionShop-phpServer/Web/product_info_page.php","_self");
+                    window.open("http://datn4.000webhostapp.com/Web/product_info_page.php","_self");
                   </script>';
             $uploadOk = 0;
         }
@@ -138,7 +138,7 @@
         if ($file_size > 2000000) {
             echo '<script type="text/JavaScript"> 
                     alert("Sorry, your file is too large.");
-                    window.open("http://localhost/FashionShop-phpServer/Web/product_info_page.php","_self");
+                    window.open("http://datn4.000webhostapp.com/Web/product_info_page.php","_self");
                   </script>';
             $uploadOk = 0;
         }
@@ -147,7 +147,7 @@
             && $imageFileType != "gif" ) {
             echo '<script type="text/JavaScript"> 
                     alert("Sorry, only JPG, JPEG, PNG & GIF files are allowed.");
-                    window.open("http://localhost/FashionShop-phpServer/Web/product_info_page.php","_self");
+                    window.open("http://datn4.000webhostapp.com/Web/product_info_page.php","_self");
                   </script>';
             $uploadOk = 0;
         }

@@ -264,9 +264,9 @@
             employee_list.addEventListener("click", function () {
               window.open("http://datn4.000webhostapp.com/Web/list_employee.php?search_value=","_self");
             });
-            profit.addEventListener("click", function () {
-              window.open("http://datn4.000webhostapp.com/Web/profit.php?cur_month='.$cur_month.'&cur_year='.$cur_year.'","_self");
-            });
+            // profit.addEventListener("click", function () {
+            //   window.open("http://datn4.000webhostapp.com/Web/profit.php?cur_month='.$cur_month.'&cur_year='.$cur_year.'","_self");
+            // });
         </script>
       </body>
     </html>

@@ -1,7 +1,7 @@
 <?php
     require "../dbconnect.php";
     $target_dir = "../brand_logo/";
-    $base_link = "http://localhost/FashionShop-phpServer/brand_logo/";
+    $base_link = "http://datn4.000webhostapp.com/brand_logo/";
     $brand_name = $_POST["inputAddBrandName"];
     $brand_location = $_POST["inputAddBrandLocation"];
     $brand_descr = $_POST["inputAddBrandDesc"];
@@ -24,7 +24,7 @@
     if($uploadOk == 0){
         echo '<script type="text/JavaScript"> 
         alert("File chưa được upload");
-        window.open("http://localhost/FashionShop-phpServer/Web2/product_info_page.php","_self");
+        window.open("http://datn4.000webhostapp.com/Web/product_info_page.php","_self");
       </script>';
     }else{
         if(strlen($brand_name) > 0 && strlen($brand_location) > 0 && strlen($brand_descr) > 0){
@@ -33,7 +33,7 @@
             mysqli_query($connect,$query);
             echo '<script type="text/JavaScript"> 
             alert("Thêm brand thành công");
-            window.open("http://localhost/FashionShop-phpServer/Web2/product_info_page.php","_self");
+            window.open("http://datn4.000webhostapp.com/Web/product_info_page.php","_self");
         </script>';
         }
     }
@@ -44,7 +44,7 @@
         if (file_exists($target_file)) {
             echo '<script type="text/JavaScript"> 
             alert("File ảnh đã tồn tại");
-            window.open("http://localhost/FashionShop-phpServer/Web2/product_info_page.php","_self");
+            window.open("http://datn4.000webhostapp.com/Web/product_info_page.php","_self");
         </script>';
             $uploadOk = 0;
         }
@@ -52,7 +52,7 @@
         if ($file_size > 2000000) {
             echo '<script type="text/JavaScript"> 
             alert("File ảnh quá nặng");
-            window.open("http://localhost/FashionShop-phpServer/Web2/product_info_page.php","_self");
+            window.open("http://datn4.000webhostapp.com/Web/product_info_page.php","_self");
         </script>';
             $uploadOk = 0;
         }
@@ -61,7 +61,7 @@
             && $imageFileType != "gif" ) {
             echo '<script type="text/JavaScript"> 
             alert("Chỉ sử dụng ảnh có định dạng JPG, JPEG, PNG & GIF");
-            window.open("http://localhost/FashionShop-phpServer/Web2/product_info_page.php","_self");
+            window.open("http://datn4.000webhostapp.com/Web/product_info_page.php","_self");
         </script>';
             $uploadOk = 0;
         }

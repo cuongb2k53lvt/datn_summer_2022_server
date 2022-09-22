@@ -5,6 +5,7 @@
     $data_user = mysqli_query($connect,$select_all_user);
     $check_mail_existed = 0;
     $cur_date_time = date('Y-m-d H:i:s');
+    $rd_pw = uniqid();
     $user;
     class User{
         function User($id,$user_name,$password,$email,$full_name,$phone,$sex,$birthdate,$address,$total_spend,$avatar,$active_status,$account_type){
@@ -37,7 +38,7 @@
         mysqli_query($connect,$update_cur_time);
         echo json_encode($user);
     }else{
-        $insert_user = "INSERT INTO User_FashionShop VALUES (null,'$email','','$email','$email','empty',
+        $insert_user = "INSERT INTO User_FashionShop VALUES (null,'$email','$rd_pw','$email','$email','empty',
         'empty','1900-01-01','empty',0,'empty','$cur_date_time',0,'active','google')";
         mysqli_query($connect,$insert_user);
         while($row = mysqli_fetch_assoc($data_user)){

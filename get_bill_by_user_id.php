@@ -1,7 +1,7 @@
 <?php
     require "dbconnect.php";
     $user_id = $_GET['user_id'];
-    $get_bill_by_user = "SELECT * FROM bill_fashionshop WHERE user_id = '$user_id'";
+    $get_bill_by_user = "SELECT * FROM bill_fashionshop WHERE user_id = '$user_id' ORDER BY bill_id DESC";
     $get_bill_detail = "SELECT * FROM detail_bill_fashionshop INNER JOIN products_fashionshop 
     ON products_fashionshop.product_id = detail_bill_fashionshop.product_id INNER JOIN 
     product_size_fashionshop ON product_size_fashionShop.product_size_id = detail_bill_fashionShop.product_size_id";

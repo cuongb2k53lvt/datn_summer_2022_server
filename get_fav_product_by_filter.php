@@ -8,13 +8,13 @@ if($type == 'Tất cả'){
     $get_all_product = "SELECT * FROM products_fashionshop INNER JOIN clothes_type_fashionshop ON 
     products_fashionshop.type_id = clothes_type_fashionshop.type_id INNER JOIN brand_fashionshop ON 
     products_fashionshop.brand_id = brand_fashionshop.brand_id INNER JOIN follow_product_fashionshop ON
-    follow_product_fashionshop.product_id = products_fashionshop.product_id 
+    follow_product_fashionshop.product_id = products_fashionshop.product_id WHERE follow_product_fashionshop.user_id = '$user_id' 
     ORDER BY products_fashionshop.price ".$value;
 }else{
     $get_all_product = "SELECT * FROM products_fashionshop INNER JOIN clothes_type_fashionshop ON 
     products_fashionshop.type_id = clothes_type_fashionshop.type_id INNER JOIN brand_fashionshop ON 
     products_fashionshop.brand_id = brand_fashionshop.brand_id INNER JOIN follow_product_fashionshop ON
-    follow_product_fashionshop.product_id = products_fashionshop.product_id WHERE clothes_type_fashionshop.type = '$type' 
+    follow_product_fashionshop.product_id = products_fashionshop.product_id WHERE clothes_type_fashionshop.type = '$type' AND follow_product_fashionshop.user_id = '$user_id'
     ORDER BY products_fashionshop.price ".$value;
 }
 $get_all_product_size = "SELECT * FROM product_size_fashionshop";

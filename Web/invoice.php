@@ -3,14 +3,14 @@
     session_start();
     if(!isset($_SESSION['user_name']) && !isset($_SESSION['password'])){
         echo '<script type="text/JavaScript"> 
-        window.open("http://localhost/FashionShop-phpServer/Web/Login_web.html","_self");
+        window.open("http://datn4.000webhostapp.com/Web/Login_web.html","_self");
       </script>';
     }
     $month_value = $_GET['month_value'];
     if($month_value == 'all'){
-      $get_user_bill = "SELECT * FROM bill_fashionshop INNER JOIN user_fashionshop ON bill_fashionshop.user_id = user_fashionshop.user_id";
+      $get_user_bill = "SELECT * FROM bill_fashionshop INNER JOIN user_fashionshop ON bill_fashionshop.user_id = user_fashionshop.user_id ORDER BY bill_id DESC";
     }else{
-      $get_user_bill = "SELECT * FROM bill_fashionshop INNER JOIN user_fashionshop ON bill_fashionshop.user_id = user_fashionshop.user_id WHERE MONTH(bill_fashionshop.date_created) = '$month_value'";
+      $get_user_bill = "SELECT * FROM bill_fashionshop INNER JOIN user_fashionshop ON bill_fashionshop.user_id = user_fashionshop.user_id WHERE MONTH(bill_fashionshop.date_created) = '$month_value' ORDER BY bill_id DESC";
     }
     $bill_html = '';
     $user_bill_data = mysqli_query($connect,$get_user_bill);
@@ -26,6 +26,8 @@
                 class="h-[80px] w-[80px] rounded-full mr-4"
               />
               <div>
+                <p>Hóa đơn: '.$row['bill_id'].'</p>
+                <p>Trạng thái: '.$row['bill_status'].'</p>
                 <p>Tên người dùng:'.$row['user_name'].'</p>
                 <p>Email: '.$row['email'].'</p>
                 <p>Liên hệ: '.$row['phone'].'</p>
@@ -137,7 +139,7 @@
                       </a>
                       <ul>
                         <li>
-                          <a href="http://localhost/FashionShop-phpServer/Web/list_user.php?status=all&search_value=">
+                          <a href="http://datn4.000webhostapp.com/Web/list_user.php?status=all&search_value=">
                             <i class="metismenu-icon"></i>
                             Danh sách người dùng
                           </a>
@@ -160,7 +162,7 @@
                           </a>
                         </li>
                         <li>
-                          <a href="http://localhost/FashionShop-phpServer/Web/list_product.php?product_value=all&product_type=all&search_value=">
+                          <a href="http://datn4.000webhostapp.com/Web/list_product.php?product_value=all&product_type=all&search_value=">
                             <i class="metismenu-icon"></i>
                             Danh sách sản phẩm
                           </a>
@@ -168,7 +170,7 @@
                       </ul>
                     </li>
                     <li>
-                      <a href="http://localhost/FashionShop-phpServer/Web/invoice.php?month_value=all">
+                      <a href="http://datn4.000webhostapp.com/Web/invoice.php?month_value=all">
                         <i class="metismenu-icon pe-7s-note2"></i>
                         Hóa đơn chi tiết
                         <i

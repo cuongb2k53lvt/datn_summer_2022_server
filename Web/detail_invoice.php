@@ -3,7 +3,7 @@
     session_start();
     if(!isset($_SESSION['user_name']) && !isset($_SESSION['password'])){
         echo '<script type="text/JavaScript"> 
-        window.open("http://localhost/FashionShop-phpServer/Web/Login_web.html","_self");
+        window.open("http://datn4.000webhostapp.com/Web/Login_web.html","_self");
       </script>';
     }
     $bill_id = $_GET['bill_id'];
@@ -14,6 +14,10 @@
     $user_id = '';
     $bill_status = '';
     $bill_value = '';
+    $receiver_name = '';
+    $address = '';
+    $contact = '';
+    $date_shipped = '';
     $get_bill_status = "SELECT * FROM bill_fashionshop WHERE bill_id = '$bill_id'";
     $data_bill_status = mysqli_query($connect,$get_bill_status);
     if($data_bill_status){
@@ -21,6 +25,12 @@
         $bill_status = $row['bill_status'];
         $bill_value = $row['amount'];
         $user_id = $row['user_id'];
+        $receiver_name = $row['receiver_name'];
+        $address = $row['city'].', '.$row['street_address'];
+        $contact = $row['contact'];
+        if($row['date_shipped'] != '1900-01-01'){
+            $date_shipped = $row['date_shipped'];
+        }
       }
     }
     $total_amount = number_format($_GET['total_amount']);
@@ -136,7 +146,7 @@
                       </a>
                       <ul>
                         <li>
-                          <a href="http://localhost/FashionShop-phpServer/Web/list_user.php?status=all&search_value=">
+                          <a href="http://datn4.000webhostapp.com/Web/list_user.php?status=all&search_value=">
                             <i class="metismenu-icon"></i>
                             Danh sách người dùng
                           </a>
@@ -159,7 +169,7 @@
                           </a>
                         </li>
                         <li>
-                          <a href="http://localhost/FashionShop-phpServer/Web/list_product.php?product_value=all&product_type=all&search_value=">
+                          <a href="http://datn4.000webhostapp.com/Web/list_product.php?product_value=all&product_type=all&search_value=">
                             <i class="metismenu-icon"></i>
                             Danh sách sản phẩm
                           </a>
@@ -167,7 +177,7 @@
                       </ul>
                     </li>
                     <li>
-                      <a href="http://localhost/FashionShop-phpServer/Web/invoice.php?month_value=all">
+                      <a href="http://datn4.000webhostapp.com/Web/invoice.php?month_value=all">
                         <i class="metismenu-icon pe-7s-note2"></i>
                         Hóa đơn chi tiết
                         <i
@@ -208,9 +218,17 @@
                                     <p class="text-sm font-medium text-gray-400">
                                       Hóa đơn của
                                     </p>
-                                    <p>'.$user_name.'</p>
-                                    <p>'.$email.'</p>
-                                    <p>'.$phone.'</p>
+                                    <p> Người tạo: '.$user_name.'</p>
+                                    <p> Email: '.$email.'</p>
+                                    <p> Điện thoại: '.$phone.'</p>
+                                  </div>
+                                  <div>
+                                    <p class="text-sm font-medium text-gray-400">
+                                      Địa chỉ giao hàng
+                                    </p>
+                                    <p> Người nhận: '.$receiver_name.'</p>
+                                    <p> Địa chỉ: '.$address.'</p>
+                                    <p> Liên lạc: '.$contact.'</p>
                                   </div>
                                 </div>
                                 <div class="space-y-2">
@@ -225,6 +243,12 @@
                                       Ngày thanh toán
                                     </p>
                                     <p>'.$date_created.'</p>
+                                  </div>
+                                  <div>
+                                    <p class="text-sm font-medium text-gray-400">
+                                      Ngày giao hàng
+                                    </p>
+                                    <p>'.$date_shipped.'</p>
                                   </div>
                                   <div>
                                     <p class="text-sm font-medium text-gray-400">

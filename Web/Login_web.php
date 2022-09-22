@@ -15,12 +15,12 @@
         $_SESSION['user_name'] = $uname;
         $_SESSION['password'] = $password;
         echo '<script type="text/JavaScript"> 
-        window.open("http://localhost/FashionShop-phpServer/Web/main_page.php","_self");
+        window.open("http://datn4.000webhostapp.com/Web/main_page.php","_self");
       </script>';
     }else{
         echo '<script type="text/JavaScript"> 
         alert("Thông tin đăng nhập không chính xác");
-        window.open("http://localhost/FashionShop-phpServer/Web/Login_web.html","_self");
+        window.open("http://datn4.000webhostapp.com/Web/Login_web.html","_self");
       </script>';
     }
 ?>

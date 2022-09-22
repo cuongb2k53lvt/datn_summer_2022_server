@@ -11,7 +11,7 @@
     if($psw != $re_psw){
         echo '<script type="text/JavaScript"> 
         alert("Mật khẩu không trùng khớp"'.$psw.$re_psw.');
-        window.open("http://localhost/FashionShop-phpServer/Web/Signup_employee.php","_self");
+        window.open("http://datn4.000webhostapp.com/Web/Signup_employee.php","_self");
         </script>';
     }
     $get_employee = "SELECT * FROM employee";
@@ -26,14 +26,14 @@
     if($check>0){
         echo '<script type="text/JavaScript"> 
         alert("Tài khoản đã tồn tại");
-        window.open("http://localhost/FashionShop-phpServer/Web/Signup_employee.php","_self");
+        window.open("http://datn4.000webhostapp.com/Web/Signup_employee.php","_self");
       </script>';
     }else{
         $insert_employee = "INSERT INTO employee VALUES(null,'$name','$uname','$psw','$contact','$address','$email')";
         mysqli_query($connect,$insert_employee);
         echo '<script type="text/JavaScript"> 
         alert("Đăng kí thành công");
-        window.open("http://localhost/FashionShop-phpServer/Web/Signup_employee.php","_self");
+        window.open("http://datn4.000webhostapp.com/Web/Signup_employee.php","_self");
       </script>';
     }
 ?>

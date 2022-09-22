@@ -4,7 +4,7 @@
     $employee_html = '';
     if(!isset($_SESSION['user_name']) && !isset($_SESSION['password'])){
         echo '<script type="text/JavaScript"> 
-        window.open("http://localhost/FashionShop-phpServer/Web/Login_web.html","_self");
+        window.open("http://datn4.000webhostapp.com/Web/Login_web.html","_self");
       </script>';
     }
     $cur_month = date('m');
@@ -130,7 +130,7 @@
                       </a>
                       <ul>
                         <li>
-                          <a href="http://localhost/FashionShop-phpServer/Web/list_user.php?status=all&search_value=">
+                          <a href="http://datn4.000webhostapp.com/Web/list_user.php?status=all&search_value=">
                             <i class="metismenu-icon"></i>
                             Danh sách người dùng
                           </a>
@@ -153,7 +153,7 @@
                           </a>
                         </li>
                         <li>
-                          <a href="http://localhost/FashionShop-phpServer/Web/list_product.php?product_value=all&product_type=all&search_value=">
+                          <a href="http://datn4.000webhostapp.com/Web/list_product.php?product_value=all&product_type=all&search_value=">
                             <i class="metismenu-icon"></i>
                             Danh sách sản phẩm
                           </a>
@@ -161,7 +161,7 @@
                       </ul>
                     </li>
                     <li>
-                      <a href="http://localhost/FashionShop-phpServer/Web/invoice.php?month_value=all">
+                      <a href="http://datn4.000webhostapp.com/Web/invoice.php?month_value=all">
                         <i class="metismenu-icon pe-7s-note2"></i>
                         Hóa đơn chi tiết
                         <i
@@ -253,20 +253,20 @@
             var employee_list = document.getElementById("employee_list");
             var profit = document.getElementById("profit");
             user_list.addEventListener("click", function () {
-                window.open("http://localhost/FashionShop-phpServer/Web/list_user.php?status=all&search_value=","_self");
+                window.open("http://datn4.000webhostapp.com/Web/list_user.php?status=all&search_value=","_self");
             });
             bill_list.addEventListener("click", function () {
-              window.open("http://localhost/FashionShop-phpServer/Web/invoice.php?month_value=all","_self");
+              window.open("http://datn4.000webhostapp.com/Web/invoice.php?month_value=all","_self");
             });
             product_list.addEventListener("click", function () {
-              window.open("http://localhost/FashionShop-phpServer/Web/list_product.php?product_value=all&product_type=all&search_value=","_self");
+              window.open("http://datn4.000webhostapp.com/Web/list_product.php?product_value=all&product_type=all&search_value=","_self");
             });
             employee_list.addEventListener("click", function () {
-              window.open("http://localhost/FashionShop-phpServer/Web/list_employee.php?search_value=","_self");
+              window.open("http://datn4.000webhostapp.com/Web/list_employee.php?search_value=","_self");
             });
-            profit.addEventListener("click", function () {
-              window.open("http://localhost/FashionShop-phpServer/Web/profit.php?cur_month='.$cur_month.'&cur_year='.$cur_year.'","_self");
-            });
+            // profit.addEventListener("click", function () {
+            //   window.open("http://datn4.000webhostapp.com/Web/profit.php?cur_month='.$cur_month.'&cur_year='.$cur_year.'","_self");
+            // });
         </script>
       </body>
     </html>

@@ -3,7 +3,7 @@
     session_start();
     if(!isset($_SESSION['user_name']) && !isset($_SESSION['password'])){
         echo '<script type="text/JavaScript"> 
-        window.open("http://localhost/FashionShop-phpServer/Web/Login_web.html","_self");
+        window.open("http://datn4.000webhostapp.com/Web/Login_web.html","_self");
       </script>';
     }
     $search_style = "(search.length > 0) ? 'bg-purple-500' : 'bg-gray-500 cursor-not-allowed'";
@@ -144,7 +144,7 @@
                       </a>
                       <ul>
                         <li>
-                          <a href="http://localhost/FashionShop-phpServer/Web/list_user.php?status=all&search_value=">
+                          <a href="http://datn4.000webhostapp.com/Web/list_user.php?status=all&search_value=">
                             <i class="metismenu-icon"></i>
                             Danh sách người dùng
                           </a>
@@ -167,7 +167,7 @@
                           </a>
                         </li>
                         <li>
-                          <a href="http://localhost/FashionShop-phpServer/Web/list_product.php?product_value=all&product_type=all&search_value=">
+                          <a href="http://datn4.000webhostapp.com/Web/list_product.php?product_value=all&product_type=all&search_value=">
                             <i class="metismenu-icon"></i>
                             Danh sách sản phẩm
                           </a>
@@ -175,7 +175,7 @@
                       </ul>
                     </li>
                     <li>
-                      <a href="http://localhost/FashionShop-phpServer/Web/invoice.php?month_value=all">
+                      <a href="http://datn4.000webhostapp.com/Web/invoice.php?month_value=all">
                         <i class="metismenu-icon pe-7s-note2"></i>
                         Hóa đơn chi tiết
                         <i

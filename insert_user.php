@@ -3,7 +3,7 @@
     $taikhoan = $_POST['taikhoan'];
     $matkhau = $_POST['matkhau'];
     $email = $_POST['email'];
-    $acount_type = $_POST['acount_type'];
+    $acount_type = $_POST['account_type'];
     $check_user_name = 0;
     $str_get_user_name = "SELECT user_name FROM user_fashionshop";
     $data = mysqli_query($connect,$str_get_user_name);
@@ -32,5 +32,4 @@
                echo "Null"; 
             }
         }
-
 ?>
